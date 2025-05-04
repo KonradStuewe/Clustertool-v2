@@ -1,0 +1,64 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+    name: sonarr-v2
+    namespace: sonarr-v2
+spec:
+    interval: 15m
+    chart:
+        spec:
+            chart: sonarr
+            version: 23.8.0
+            sourceRef:
+                kind: HelmRepository
+                name: truecharts
+                namespace: flux-system
+    releaseName: sonarr-v2
+    values:
+        TZ: Europe/Berlin
+        credentials:
+            aws:
+                type: s3
+                accessKey: ${AWS_ACCESS_KEY}
+                bucket: ${AWS_BUCKET}
+                encrKey: ${AWS_ENCR_KEY}
+                secretKey: ${AWS_SECRET_KEY}
+                url: ${AWS_URL}
+#        ingress:
+#            main:
+#                integrations:
+#                    homepage:
+#                        enabled: false
+#                        name: "Sonarr"
+#                        group: "*Arr Services"
+#                        siteMonitor: http://sonarr-v2.sonarr-v2.svc.cluster.local:8989
+#                        widget:
+#                            custom:
+#                                key: "${SONARR_API_KEY}"
+        persistence:
+            config:
+                volsync:
+                    - credentials: aws
+                      type: restic
+                      name: sonarr-config
+                      src:
+                        enabled: true
+                      dest:
+                        enabled: true
+            data-vol:
+                enabled: true
+                type: nfs
+                mountPath: /data
+                path: /mnt/Helios/data
+                server: ${LOCAL_NAS_IP}
+        release_name: sonarr-v2
+        securityContext:
+            container:
+                UMASK: "0022"
+                runAsGroup: 568
+                runAsUser: 568
+            pod:
+                fsGroupChangePolicy: OnRootMismatch
+        service:
+            main:
+                type: LoadBalancer

@@ -1,0 +1,40 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+    name: xteve
+    namespace: xteve
+spec:
+    interval: 15m
+    chart:
+        spec:
+            chart: xteve
+            version: 15.5.1
+            sourceRef:
+                kind: HelmRepository
+                name: truecharts
+                namespace: flux-system
+    releaseName: xteve
+    values:
+        TZ: Europe/Berlin
+        credentials:
+            aws:
+                type: s3
+                accessKey: ${AWS_ACCESS_KEY}
+                bucket: ${AWS_BUCKET}
+                encrKey: ${AWS_ENCR_KEY}
+                secretKey: ${AWS_SECRET_KEY}
+                url: ${AWS_URL}
+        persistence:
+            config:
+                volsync:
+                    - credentials: aws
+                      type: restic
+                      name: xteve-config
+                      src:
+                        enabled: true
+                      dest:
+                        enabled: true
+        release_name: xteve
+        service:
+            main:
+                type: LoadBalancer
