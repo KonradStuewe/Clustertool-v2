@@ -68,7 +68,7 @@ spec:
             additionalAdvertiseURL: ""
             disableGDM: true
             requireHTTPS: false
-            serverIP: 10.0.0.224
+            serverIP: 10.0.0.223
         release_name: plex
         service:
             main:
