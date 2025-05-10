@@ -58,6 +58,14 @@ spec:
                     certManager:
                         enabled: false
                         certificateIssuer: domain-0-le-prod
+                    homepage:
+                        enabled: true
+                        name: sonarr
+                        group: "Media Managment"
+                        siteMonitor: http://sonarr-v2.sonarr-v2.svc.cluster.local:8989
+                        widget:
+                            custom:
+                                key: "${SONARR_API_KEY}"
                 hosts:
                     - host: sonarr.${DOMAIN_0}
                       paths:
