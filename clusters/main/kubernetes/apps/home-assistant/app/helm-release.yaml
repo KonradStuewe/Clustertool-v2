@@ -59,9 +59,9 @@ spec:
                 type: device
                 hostPath: /dev/ttyUSB0
         release_name: home-assistant
-#        service:
-#            main:
-#                type: LoadBalancer
+        #        service:
+        #            main:
+        #                type: LoadBalancer
         ingress:
             main:
                 enabled: true
@@ -73,14 +73,7 @@ spec:
                         enabled: true
                         certificateIssuer: domain-0-le-prod
                 hosts:
-                    - host: ha.k0nr4d.de
+                    - host: ha.${DOMAIN_0}
                       paths:
                           - path: /
                             pathType: Prefix
-#            ingress-name:
-#                integrations:
-#                    homepage:
-#                        enabled: false
-#                        name: "Home-Assistant"
-#                        group: "Network"
-
