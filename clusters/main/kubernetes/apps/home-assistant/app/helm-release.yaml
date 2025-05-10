@@ -68,8 +68,8 @@ spec:
                 ingressClassName: internal
                 hosts:
                     - host: ha.k0nr4d.de
-            ingress-name:
-                integrations:
+#            ingress-name:
+#                integrations:
 #                    homepage:
 #                        enabled: false
 #                        name: "Home-Assistant"
