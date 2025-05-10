@@ -48,6 +48,18 @@ spec:
                 runAsUser: 568
             pod:
                 fsGroupChangePolicy: OnRootMismatch
-        service:
+        ingress:
             main:
-                type: LoadBalancer
+                enabled: true
+                ingressClassName: internal
+                integrations:
+                    traefik:
+                        enabled: false
+                    certManager:
+                        enabled: false
+                        certificateIssuer: domain-0-le-prod
+                hosts:
+                    - host: radarr.${DOMAIN_0}
+                      paths:
+                          - path: /
+                            pathType: Prefix

@@ -35,6 +35,18 @@ spec:
                       dest:
                         enabled: true
         release_name: prowlarr-v2
-        service:
+        ingress:
             main:
-                type: LoadBalancer
+                enabled: true
+                ingressClassName: internal
+                integrations:
+                    traefik:
+                        enabled: false
+                    certManager:
+                        enabled: false
+                        certificateIssuer: domain-0-le-prod
+                hosts:
+                    - host: prowlarr.${DOMAIN_0}
+                      paths:
+                          - path: /
+                            pathType: Prefix

@@ -24,17 +24,6 @@ spec:
                 encrKey: ${AWS_ENCR_KEY}
                 secretKey: ${AWS_SECRET_KEY}
                 url: ${AWS_URL}
-#        ingress:
-#            main:
-#                integrations:
-#                    homepage:
-#                        enabled: false
-#                        name: "Sonarr"
-#                        group: "*Arr Services"
-#                        siteMonitor: http://sonarr-v2.sonarr-v2.svc.cluster.local:8989
-#                        widget:
-#                            custom:
-#                                key: "${SONARR_API_KEY}"
         persistence:
             config:
                 volsync:
@@ -59,6 +48,18 @@ spec:
                 runAsUser: 568
             pod:
                 fsGroupChangePolicy: OnRootMismatch
-        service:
+        ingress:
             main:
-                type: LoadBalancer
+                enabled: true
+                ingressClassName: internal
+                integrations:
+                    traefik:
+                        enabled: false
+                    certManager:
+                        enabled: false
+                        certificateIssuer: domain-0-le-prod
+                hosts:
+                    - host: sonarr.${DOMAIN_0}
+                      paths:
+                          - path: /
+                            pathType: Prefix
