@@ -51,10 +51,30 @@ spec:
                     traefik:
                         enabled: false
                     certManager:
-                        enabled: false
+                        enabled: true
                         certificateIssuer: domain-0-le-prod
                 hosts:
                     - host: home.${DOMAIN_0}
                       paths:
                           - path: /
                             pathType: Prefix
+        addons:
+            codeserver:
+                enabled: true
+                ingress:
+                    enabled: true
+                    integrations:
+                        traefik:
+                            enabled: false
+                        certManager:
+                            enabled: true
+                            certificateIssuer: domain-0-le-prod
+                    hosts:
+                        - host: home-edit.${DOMAIN_0}
+                          paths:
+                              - path: /
+                                pathType: Prefix
+                service:
+                    ports:
+                        codeserver:
+                            port: 36107
