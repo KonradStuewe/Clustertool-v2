@@ -62,11 +62,16 @@ spec:
         service:
             main:
                 type: LoadBalancer
-#        ingress:
-#            ingress-name:
-#                integrations:
+        ingress:
+            main:
+                enabled: true
+                ingressClassName: internal
+                hosts:
+                    - host: ha.k0nr4d.de
+            ingress-name:
+                integrations:
 #                    homepage:
 #                        enabled: false
 #                        name: "Home-Assistant"
 #                        group: "Network"
-                        
+
