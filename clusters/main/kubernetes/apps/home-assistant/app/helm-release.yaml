@@ -66,8 +66,15 @@ spec:
             main:
                 enabled: true
                 ingressClassName: internal
+                integrations:
+                    certManager:
+                        enabled: true
+                        certificateIssuer: domain-0-le-prod
                 hosts:
                     - host: ha.k0nr4d.de
+                      paths:
+                          - path: /
+                            pathType: Prefix
 #            ingress-name:
 #                integrations:
 #                    homepage:
