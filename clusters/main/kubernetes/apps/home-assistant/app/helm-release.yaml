@@ -59,9 +59,9 @@ spec:
                 type: device
                 hostPath: /dev/ttyUSB0
         release_name: home-assistant
-        service:
-            main:
-                type: LoadBalancer
+#        service:
+#            main:
+#                type: LoadBalancer
         ingress:
             main:
                 enabled: true
