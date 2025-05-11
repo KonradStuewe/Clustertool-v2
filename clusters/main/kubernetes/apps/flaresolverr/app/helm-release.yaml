@@ -16,22 +16,4 @@ spec:
     releaseName: flaresolverr
     values:
         TZ: Europe/Berlin
-        credentials:
-            aws:
-                type: s3
-                accessKey: ${AWS_ACCESS_KEY}
-                bucket: ${AWS_BUCKET}
-                encrKey: ${AWS_ENCR_KEY}
-                secretKey: ${AWS_SECRET_KEY}
-                url: ${AWS_URL}
-        persistence:
-            config:
-                volsync:
-                    - credentials: aws
-                      dest:
-                        enabled: true
-                      name: flaresolverr-config
-                      src:
-                        enabled: true
-                      type: restic
         release_name: flaresolverr
