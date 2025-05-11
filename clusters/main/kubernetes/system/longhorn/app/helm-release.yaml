@@ -35,18 +35,3 @@ spec:
             defaultClass: true
             # Increase to 3 for a multi-node cluster
             defaultClassReplicaCount: 1
-    ingress:
-        frontend:
-            enabled: true
-            ingressClassName: internal
-            integrations:
-                traefik:
-                    enabled: false
-                certManager:
-                    enabled: true
-                    certificateIssuer: domain-0-le-prod
-            hosts:
-                - host: longhorn.${DOMAIN_0}
-                  paths:
-                      - path: /
-                        pathType: Prefix
