@@ -7,3 +7,4 @@ resources:
   - cron-filesystem-trim.yaml
   - cron-snapshot-cleanup.yaml
   - cron-snapshot-delete.yaml
+  - ingress.yaml
