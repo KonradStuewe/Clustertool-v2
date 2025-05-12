@@ -5,6 +5,6 @@ resources:
   - helm-release.yaml
   - volumeSnapshotClass.yaml
   - cron-filesystem-trim.yaml
-#  - cron-snapshot-cleanup.yaml
-#  - cron-snapshot-delete.yaml
+  - cron-snapshot-cleanup.yaml
+  - cron-snapshot-delete.yaml
   - ingress.yaml
