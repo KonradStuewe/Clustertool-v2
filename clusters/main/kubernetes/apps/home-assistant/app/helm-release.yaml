@@ -30,12 +30,16 @@ spec:
                     credentials: aws
                     enabled: true
                     retentionPolicy: "14d"
-                    #revision: "1"
+                    revision: "1"
                 cluster:
                     singleNode: true
                 database: home-assistant
-                mode: standalone
+                mode: recovery
                 password: ${HOME_ASSISTANT_DB_PW}
+                recovery:
+                    credentials: aws
+                    enabled: true
+                    revision: ""
         credentials:
             aws:
                 type: s3
