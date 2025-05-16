@@ -108,13 +108,13 @@ spec:
                     revision: "1"
                 cluster:
                     singleNode: true
-                #mode: recovery
+                mode: recovery
                 monitoring:
                     enablePodMonitor: true
                 password: ${AUTHELIA_DB_PW}
                 recovery:
                     credentials: aws
-                    enabled: false
+                    enabled: true
                     #revision: ""
         credentials:
             aws:
@@ -144,8 +144,8 @@ spec:
                 volsync:
                     - credentials: aws
                       dest:
-                          enabled: false
+                          enabled: true
                       name: authelia-config
                       src:
-                          enabled: false
+                          enabled: true
                       type: restic
