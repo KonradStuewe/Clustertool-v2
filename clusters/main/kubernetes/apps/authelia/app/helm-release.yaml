@@ -38,16 +38,11 @@ spec:
                 # smtp setup (example is gmail)
                 smtp:
                     address: smtp://${AUTHELIA_SMTP_HOST}:587
-                    # gmail email address (username)
                     username: ${AUTHELIA_SMTP_USER}
-                    # use a google app password if using gmail
                     password: ${AUTHELIA_SMTP_PW}
-                    # email address to show as sender
-                    sender: no-reply@${DOMAIN_0}
+                    sender: Authelia Admin <no-reply@${DOMAIN_0}>
                     tls:
                         server_name: ${AUTHELIA_SMTP_HOST}
-                        minimum_version: TLS1.2
-                        skip_verify: false
             access_control:
                 rules:
                     #Rule for API endpoints
