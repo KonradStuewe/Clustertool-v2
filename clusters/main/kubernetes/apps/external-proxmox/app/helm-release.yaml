@@ -17,17 +17,20 @@ spec:
     values:
         TZ: Europe/Berlin
         release_name: external-proxmox
-        ingress:
+        service:
             main:
                 type: ExternalIP
-                externalIP: ${EXTERNAL_PROXMOX}
-                useSlice: false
+                externalIP: "${EXTERNAL_PROXMOX}"
                 ports:
-                  main:
-                    protocol: https
-                    port: 8006
+                    main:
+                        protocol: https
+                        port: 8006
+        ingress:
+            main:
                 enabled: true
                 ingressClassName: internal
+                annotations:
+                    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
                 integrations:
                     traefik:
                         enabled: false
@@ -36,6 +39,3 @@ spec:
                         certificateIssuer: domain-0-le-prod
                 hosts:
                     - host: prox.${DOMAIN_0}
-                      paths:
-                          - path: /
-                            pathType: Prefix
