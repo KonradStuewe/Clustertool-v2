@@ -31,14 +31,17 @@ spec:
                       type: restic
                       name: xteve-config
                       src:
-                        enabled: true
+                          enabled: true
                       dest:
-                        enabled: true
+                          enabled: true
         release_name: xteve
         ingress:
             main:
                 enabled: true
                 ingressClassName: internal
+                annotations:
+                    nginx.ingress.kubernetes.io/configuration-snippet: |
+                        rewrite ^/$ /web permanent;
                 integrations:
                     traefik:
                         enabled: false
