@@ -37,7 +37,7 @@ spec:
             notifier:
                 # smtp setup (example is gmail)
                 smtp:
-                    address: submission://${AUTHELIA_SMTP_HOST}:587
+                    address: smtp://${AUTHELIA_SMTP_HOST}:587
                     # gmail email address (username)
                     username: ${AUTHELIA_SMTP_USER}
                     # use a google app password if using gmail

@@ -34,9 +34,6 @@ spec:
     uninstall:
         keepHistory: false
     values:
-        #Temporary Fix for failed update
-        image:
-            pullPolicy: Always
         # autoDirectNodeRoutes: true
         # routingMode: native
         hubble:
