@@ -119,7 +119,7 @@ spec:
                 password: ${AUTHELIA_DB_PW}
                 recovery:
                     credentials: aws
-                    enabled: true
+                    enabled: false
                     #revision: ""
         credentials:
             aws:
@@ -152,5 +152,5 @@ spec:
                           enabled: false
                       name: authelia-config
                       src:
-                          enabled: true
+                          enabled: false
                       type: restic
