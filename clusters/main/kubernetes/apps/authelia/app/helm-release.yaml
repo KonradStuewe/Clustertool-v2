@@ -43,7 +43,7 @@ spec:
                     # use a google app password if using gmail
                     password: ${AUTHELIA_SMTP_PW}
                     # email address to show as sender
-                    sender: Authelia Admin <no-reply@${DOMAIN_0}>
+                    sender: no-reply@${DOMAIN_0}
                     tls:
                         server_name: ${AUTHELIA_SMTP_HOST}
                         minimum_version: TLS1.2
