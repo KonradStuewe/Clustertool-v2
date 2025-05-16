@@ -14,3 +14,5 @@ resources:
   - requestrr/ks.yaml
   - sonarr-v2/ks.yaml
   - xteve/ks.yaml
+  - authelia/ks.yaml
+  - external-proxmox/ks.yaml
