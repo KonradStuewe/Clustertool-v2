@@ -28,6 +28,8 @@ spec:
             main:
                 enabled: true
                 ingressClassName: internal
+                annotations:
+                    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
                 integrations:
                     traefik:
                         enabled: false
@@ -44,19 +46,19 @@ spec:
                 volsync:
                     - credentials: aws
                       dest:
-                        enabled: true
+                          enabled: true
                       name: omada-controller-data
                       src:
-                        enabled: true
+                          enabled: true
                       type: restic
             work:
                 volsync:
                     - credentials: aws
                       dest:
-                        enabled: true
+                          enabled: true
                       name: omada-controller-working
                       src:
-                        enabled: true
+                          enabled: true
                       type: restic
         release_name: omada-controller
         service:
