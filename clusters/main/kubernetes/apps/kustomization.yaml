@@ -17,3 +17,4 @@ resources:
   - authelia/ks.yaml
   - external-proxmox/ks.yaml
   - omada-controller/ks.yaml
+  - plex-auto-languages/ks.yaml
