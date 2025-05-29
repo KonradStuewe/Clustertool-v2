@@ -19,3 +19,4 @@ resources:
   - sonarr-v2/ks.yaml
   - xteve/ks.yaml
   - qbittorrent-torrentleech/ks.yaml
+  - qbittorrent/ks.yaml
