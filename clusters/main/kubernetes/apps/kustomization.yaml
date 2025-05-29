@@ -1,21 +1,21 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - kubernetes-dashboard/ks.yaml
+  - authelia/ks.yaml
   - cloudflareddns/ks.yaml
+  - external-proxmox/ks.yaml
   - flaresolverr/ks.yaml
   - home-assistant/ks.yaml
   - homepage/ks.yaml
+  - kubernetes-dashboard/ks.yaml
   - lldap/ks.yaml
   - mosquitto/ks.yaml
+  - omada-controller/ks.yaml
   - plex/ks.yaml
+  - plex-auto-languages/ks.yaml
   - prowlarr-v2/ks.yaml
   - radarr-v2/ks.yaml
   - requestrr/ks.yaml
   - sonarr-v2/ks.yaml
   - xteve/ks.yaml
-  - authelia/ks.yaml
-  - external-proxmox/ks.yaml
-  - omada-controller/ks.yaml
-  - plex-auto-languages/ks.yaml
   - qbittorrent-torrentleech/ks.yaml
