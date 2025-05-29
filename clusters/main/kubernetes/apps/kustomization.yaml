@@ -18,3 +18,4 @@ resources:
   - external-proxmox/ks.yaml
   - omada-controller/ks.yaml
   - plex-auto-languages/ks.yaml
+  - qbittorrent-torrentleech/ks.yaml

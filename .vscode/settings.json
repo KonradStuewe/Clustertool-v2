@@ -5,7 +5,8 @@
     },
     "sops.defaults.ageKeyFile": "age.agekey",
     "yaml.schemas": {
-        "Kubernetes": "./kubernetes/*.yaml"
+      "Kubernetes": "./kubernetes/*.yaml",
+      "https://json.schemastore.org/chart.json": "file:///c%3A/Users/Konrad/Documents/GIT/Clustertool-v2/clusters/main/clusterenv.yaml"
     },
     "terminal.integrated.profiles.linux": {
         "bash": {
