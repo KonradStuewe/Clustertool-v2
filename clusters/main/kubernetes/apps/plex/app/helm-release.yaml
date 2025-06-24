@@ -70,6 +70,8 @@ spec:
         service:
             main:
                 type: LoadBalancer
+        podOptions:
+            hostUsers: true
 #        resources:
 #            limits:
 #                gpu.intel.com/i915: 1
