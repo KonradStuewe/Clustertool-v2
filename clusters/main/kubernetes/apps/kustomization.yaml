@@ -20,3 +20,4 @@ resources:
   - xteve/ks.yaml
   - qbittorrent-torrentleech/ks.yaml
   - qbittorrent/ks.yaml
+  - cloudflared/ks.yaml
