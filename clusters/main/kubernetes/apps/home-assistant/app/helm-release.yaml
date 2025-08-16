@@ -24,6 +24,9 @@ spec:
                         codeserver:
                             port: 36107
                     type: LoadBalancer
+                integrations:
+                    metallb:
+                        enabled: true
         cnpg:
             main:
                 backups:

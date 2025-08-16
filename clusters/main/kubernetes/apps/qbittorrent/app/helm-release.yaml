@@ -81,5 +81,11 @@ spec:
         service:
             main:
                 type: LoadBalancer
+                integrations:
+                    metallb:
+                        enabled: true
             torrent:
                 type: LoadBalancer
+                integrations:
+                    metallb:
+                        enabled: true

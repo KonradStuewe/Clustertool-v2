@@ -64,9 +64,21 @@ spec:
         service:
             comm:
                 type: LoadBalancer
+                integrations:
+                    metallb:
+                        enabled: true
             main:
                 type: LoadBalancer
+                integrations:
+                    metallb:
+                        enabled: true
             omada-tcp:
                 type: LoadBalancer
+                integrations:
+                    metallb:
+                        enabled: true
             omada-udp:
                 type: LoadBalancer
+                integrations:
+                    metallb:
+                        enabled: true
