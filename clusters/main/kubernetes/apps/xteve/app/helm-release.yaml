@@ -8,7 +8,7 @@ spec:
     chart:
         spec:
             chart: xteve
-            version: 15.5.1
+            version: 16.3.1
             sourceRef:
                 kind: HelmRepository
                 name: truecharts
