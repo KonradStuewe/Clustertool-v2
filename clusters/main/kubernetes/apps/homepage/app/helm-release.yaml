@@ -78,3 +78,5 @@ spec:
                     ports:
                         codeserver:
                             port: 36107
+        requests: # TEMP UNTIL CPU UPGRADE
+            cpu: 100m

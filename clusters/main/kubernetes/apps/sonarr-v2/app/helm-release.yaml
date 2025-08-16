@@ -77,3 +77,5 @@ spec:
                 integrations:
                     metallb:
                         enabled: true
+        requests: # TEMP UNTIL CPU UPGRADE
+            cpu: 100m

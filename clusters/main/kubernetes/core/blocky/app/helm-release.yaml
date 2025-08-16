@@ -70,7 +70,8 @@ spec:
                 enabled: false
             datasource:
                 enabled: false
-
         cnpg:
             main:
                 enabled: false
+        requests: # TEMP UNTIL CPU UPGRADE
+            cpu: 100m
