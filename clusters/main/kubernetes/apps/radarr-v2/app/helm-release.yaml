@@ -63,5 +63,6 @@ spec:
                       paths:
                           - path: /
                             pathType: Prefix
-        requests: # TEMP UNTIL CPU UPGRADE
-            cpu: 100m
+        resources:
+            requests: # TEMP UNTIL CPU UPGRADE
+                pu: 100m
