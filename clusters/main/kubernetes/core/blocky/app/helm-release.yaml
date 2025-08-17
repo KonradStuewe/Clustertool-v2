@@ -75,4 +75,4 @@ spec:
                 enabled: false
         resources:
             requests: # TEMP UNTIL CPU UPGRADE
-                pu: 100m
+                pu: 50m

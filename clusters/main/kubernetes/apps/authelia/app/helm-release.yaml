@@ -149,3 +149,6 @@ spec:
                       src:
                           enabled: true
                       type: restic
+        resources:
+            requests: # TEMP UNTIL CPU UPGRADE
+                pu: 50m

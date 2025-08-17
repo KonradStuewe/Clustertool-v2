@@ -80,4 +80,4 @@ spec:
                             port: 36107
         resources:
             requests: # TEMP UNTIL CPU UPGRADE
-                pu: 100m
+                pu: 50m
