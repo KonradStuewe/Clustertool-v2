@@ -38,6 +38,6 @@ spec:
                       src:
                           enabled: true
                       dest:
-                          enabled: true
+                          enabled: false
                       type: restic
         release_name: cloudflareddns
