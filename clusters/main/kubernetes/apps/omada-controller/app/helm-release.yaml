@@ -46,7 +46,7 @@ spec:
                 volsync:
                     - credentials: aws
                       dest:
-                          enabled: true
+                          enabled: false
                       name: omada-controller-data
                       src:
                           enabled: true
@@ -55,7 +55,7 @@ spec:
                 volsync:
                     - credentials: aws
                       dest:
-                          enabled: true
+                          enabled: false
                       name: omada-controller-working
                       src:
                           enabled: true
