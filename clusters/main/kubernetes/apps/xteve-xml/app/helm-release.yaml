@@ -1,0 +1,55 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+    name: xteve-xml
+    namespace: xteve-xml
+spec:
+    interval: 15m
+    chart:
+        spec:
+            chart: xteve
+            version: 16.13.5
+            sourceRef:
+                kind: HelmRepository
+                name: truecharts
+                namespace: flux-system
+    releaseName: xteve-xml
+    values:
+        TZ: Europe/Berlin
+        credentials:
+            aws:
+                type: s3
+                accessKey: ${AWS_ACCESS_KEY}
+                bucket: ${AWS_BUCKET}
+                encrKey: ${AWS_ENCR_KEY}
+                secretKey: ${AWS_SECRET_KEY}
+                url: ${AWS_URL}
+        persistence:
+            config:
+                volsync:
+                    - credentials: aws
+                      type: restic
+                      name: xteve-config
+                      src:
+                          enabled: true
+                      dest:
+                          enabled: true
+        release_name: xteve-xml
+        ingress:
+            main:
+                enabled: true
+                ingressClassName: internal
+                annotations:
+                    nginx.ingress.kubernetes.io/configuration-snippet: |
+                        rewrite ^/$ /web permanent;
+                integrations:
+                    traefik:
+                        enabled: false
+                    certManager:
+                        enabled: true
+                        certificateIssuer: domain-0-le-prod
+                hosts:
+                    - host: xteve-xml.${DOMAIN_0}
+                      paths:
+                          - path: /
+                            pathType: Prefix

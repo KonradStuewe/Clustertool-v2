@@ -21,3 +21,4 @@ resources:
   - qbittorrent-torrentleech/ks.yaml
   - qbittorrent/ks.yaml
   - cloudflared/ks.yaml
+  - xteve-xml/ks.yaml
