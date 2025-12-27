@@ -6,8 +6,11 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["ghcr.io/siderolabs/installer"],
-      "automerge": false
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["siderolabs/installer"],
+      "registryUrls": ["ghcr.io"],
+      "automerge": false,
+      "automergeType": "none"
     }
   ]
 }
