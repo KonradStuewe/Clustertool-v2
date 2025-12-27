@@ -3,14 +3,5 @@
   "extends": [
     "config:recommended",
     "github>trueforge-org/truecharts//.github/renovate/main.json5"
-  ],
-  "platformAutomerge": false,
-  "packageRules": [
-    {
-      "matchDatasources": ["docker"],
-      "matchDepNames": ["siderolabs/installer"],
-      "registryUrls": ["ghcr.io"],
-      "automerge": false
-    }
   ]
 }
