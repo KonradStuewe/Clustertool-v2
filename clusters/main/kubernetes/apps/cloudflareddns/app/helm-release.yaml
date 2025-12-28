@@ -15,6 +15,11 @@ spec:
                 namespace: flux-system
     releaseName: cloudflareddns
     values:
+        # for now until image is fixed
+        image:
+            repository: ghcr.io/hotio/cloudflareddns
+            pullPolicy: IfNotPresent
+            tag: latest@sha256:8bd0077a30d57f6b6510f96bd2b94b583b0426e2efddb932f6a26ee1c5253b6c
         TZ: Europe/Berlin
         cloudflareddns:
             api_token: ${CF_DDNS_API_TOKEN}
