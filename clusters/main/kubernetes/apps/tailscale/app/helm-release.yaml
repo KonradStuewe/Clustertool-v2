@@ -23,9 +23,10 @@ spec:
         crds: CreateReplace
         remediation:
             retries: 3
-    tailscale:
-        authkey: ${TAILSCALE_AUTH_KEY}
-        accept_dns: true
-        routes: ${TAILSCALE_ROUTES}
-        hostname: "talos"
-        advertise_as_exit_node: true
+    values:
+        tailscale:
+            authkey: ${TAILSCALE_AUTH_KEY}
+            accept_dns: true
+            routes: ${TAILSCALE_ROUTES}
+            hostname: "talos"
+            advertise_as_exit_node: true
