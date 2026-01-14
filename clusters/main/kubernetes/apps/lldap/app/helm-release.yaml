@@ -21,8 +21,7 @@ spec:
                 backups:
                     credentials: aws
                     enabled: true
-                    retentionPolicy: "14d"
-                    revision: "2"
+                    revision: "3"
                 mode: recovery
                 monitoring:
                     disableDefaultQueries: false
@@ -31,7 +30,6 @@ spec:
                 recovery:
                     credentials: aws
                     enabled: true
-                    revision: "1"
         credentials:
             aws:
                 type: s3
