@@ -4,7 +4,7 @@ metadata:
     name: tailscale
     namespace: tailscale
 spec:
-    interval: 5m
+    interval: 15m
     chart:
         spec:
             chart: tailscale
@@ -13,7 +13,7 @@ spec:
                 kind: HelmRepository
                 name: truecharts
                 namespace: flux-system
-            interval: 5m
+    releaseName: tailscale
     install:
         createNamespace: true
         crds: CreateReplace
